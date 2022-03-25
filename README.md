@@ -1,6 +1,4 @@
-# Stutrcious_app
-CodePath IOS final Group Project 
- # Stutricous 
+# Stutricous 
 
 ## Table of Contents
 1. [Overview](#Overview)
