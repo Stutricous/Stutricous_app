@@ -12,12 +12,12 @@ Stutricous is an app that can recommend meals based on your general health goals
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
-- **Category: Health and Fitness and Social Networking
-- **Mobile: This app would be primarily created for a moblie applicaiton; however, it could surely be ported onto a website version. Additionally, the application could be created on Andriod as well. 
-- **Story: User creates a food emphasis and meals are shown on their feed. Additionally, they can communicate with friends and other people on campus to discuss anything related to meals + health and fitness.  
-- **Market: The market could be anyone, but there is a general focus towards students who are currently on a college campus. 
-- **Habit: This app could be used everyday and as often as the user wants to. Health is important everyday, and this app can help with that. 
-- **Scope: First we want to see if we can pull together APIs and technologies to make this applicaiton work with anyone who wants meal recommendations in the context of just a user's geographical location, and their food emphasis. Next, we will want to see if it is possible to pull in data from college campus' dining halls to see if we can create meal options for them. This might not be avaliable in V1, but we hope to continue working after the prototype version. 
+- Category: Health and Fitness and Social Networking
+- Mobile: This app would be primarily created for a moblie applicaiton; however, it could surely be ported onto a website version. Additionally, the application could be created on Andriod as well. 
+- Story: User creates a food emphasis and meals are shown on their feed. Additionally, they can communicate with friends and other people on campus to discuss anything related to meals + health and fitness.  
+- Market: The market could be anyone, but there is a general focus towards students who are currently on a college campus. 
+- Habit: This app could be used everyday and as often as the user wants to. Health is important everyday, and this app can help with that. 
+- Scope: First we want to see if we can pull together APIs and technologies to make this applicaiton work with anyone who wants meal recommendations in the context of just a user's geographical location, and their food emphasis. Next, we will want to see if it is possible to pull in data from college campus' dining halls to see if we can create meal options for them. This might not be avaliable in V1, but we hope to continue working after the prototype version. 
 
 ## Product Spec
 
@@ -84,16 +84,17 @@ Stutricous is an app that can recommend meals based on your general health goals
    * Messaging/DM
 * Messaging/DM 
    * Profile
-
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
 <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
 ### [BONUS] Digital Wireframes & Mockups
 ### [BONUS] Interactive Prototype
+
 ## Schema 
 [This section will be completed in Unit 9]
 ### Models
 [Add table of models]
+
 ### Networking
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
