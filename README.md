@@ -59,12 +59,9 @@ Stutricous is an app that can recommend meals based on your general health goals
    * Social Media aspect to the application where users can see what their friends are doing. 
 * Messaging/DM
    * Share meal items between users and friends.
-
- 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
-* Today's recommended meal. 
 * All meals based on emphasis.
 * Recommended meal of the day.
 
@@ -91,11 +88,47 @@ Stutricous is an app that can recommend meals based on your general health goals
 ### [BONUS] Interactive Prototype
 
 ## Schema 
-[This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+Model: User
+|  Property | Type | Description |
+| ------------- | ------------- |  ------------- |
+| objectID  | String  |  Unique ID for the user |
+| profilePicture  | Image |  profile picture for the user  |
+| userName | String |  A user's unique username |
+| bodyWeight | Number | A user's current body weight |
+| dietEmphasis | Array a list of a user's diet emphasis | 
+
+Model: Food Item
+|  Property | Type | Description |
+| ------------- | ------------- |  ------------- |
+| mealID | String | A unique ID for the meal |
+| mealDescription | String | A description of the meal/food |
+| mealImage  | File |  An image of the meal item |
+| Calories | Number | A numerical representation of the calories in the meal |
+| Category | String | A Category type for the Food Item |
+| Ingredients | Array | A list of string that contains ingredients |
+| Similar Meals | Array | A list of similar meals | 
 
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+* Login Screen:
+   * (Read/Get) User request to login
+* Register Screen:
+   * (Create/Post) A New user
+* All meal diet emphasis screen:
+   * (Read/Get) Meals that 
+* Recommended Next Meal Screen
+   * User should be able to see a "Recommended Next Meal" where the user can see their recommended meal depending on different variables (i.e "Current time of day", "")
+   * Geo-features could be added to the application and meal grociery lists could be created and viewed at a grocery near you or on campus.(Optional)
+* Detail:
+   * User should be able to see a meal detail screen per meal item.
+* Search for meal 
+   * User should be able to search for a meals. 
+* Profile:
+   * (Read/Get) Query all food items that have been added to the user's meal list 
+* Messaging/DM
+   * (Read/Get) Get all direct messages that the user is involved with 
+   * (Updated/Put) Send a message to a user.
+### Existing API Endpoints 
+- Base URL - 
+| HTTP Verb | Endpoint| Description | 
+| name | type of call |  get        |
