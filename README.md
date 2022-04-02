@@ -82,11 +82,7 @@ Stutricous is an app that can recommend meals based on your general health goals
 * Messaging/DM 
    * Profile
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
-### [BONUS] Digital Wireframes & Mockups
-### [BONUS] Interactive Prototype
-
+![SecondScannedDocuments](https://user-images.githubusercontent.com/77123840/161363751-d32aefc9-6887-4ce9-ba9f-040f284281b3.jpeg)
 ## Schema 
 ### Models
 Model: User
@@ -114,35 +110,39 @@ Model: Food Item
    * (Read/Get) User request to login(Parse)
 * Register Screen:
    * (Create/Post) A New user is created(Parse).
-   * (Read/Get)
 * All meal diet emphasis screen:
-   * (Read/Get) Meals and food items that are placed with(Spoonacular)
+   * (Read/Get) Meals and food items that are placed with (Parse)(Spoonacular)(UOFM)
 * Recommended Next Meal Screen
-   * User should be able to see a "Recommended Next Meal" where the user can see their recommended meal depending on different variables (i.e "Current time of day", "")
-   * Geo-features could be added to the application and meal grociery lists could be created and viewed at a grocery near you or on campus.(Optional)
+   * (Read/Get) Gets a highly recommended food item (Parse)(Spoonacular)(UOFM)
 * Detail:
-   * User should be able to see a meal detail screen per meal item.
+   * (Read/Get) User should be able to see a meal detail screen per meal item(Spoonaculr)
 * Search for meal 
-   * User should be able to search for a meals. 
+   * (Read/Get) User should be able to search for a meals/Recipe(Parse)(Spoonacular)(UOFM) 
 * Profile:
-   * (Read/Get) Query all food items that have been added to the user's meal list 
+   * (Read/Get) Query all food items that have been added to the user's meal list(Spoonacular)
 * Messaging/DM
-   * (Read/Get) Get all direct messages that the user is involved with 
-   * (Updated/Put) Send a message to a user.
+   * (Read/Get) Get all direct messages that the user is involved with
+   * (Create/Post) Send a message to a user.
 ### Existing API Endpoints
-
-
 - Base URL - https://michigan-dining-api.tendiesti.me/
 
-- Base URL - https://spoonacular.com/food-api/
-| HTTP Verb | Endpoint | Description | 
-| Get | v1/DiningHalls | Provides food items from the a dining halls at UOFM
+| HTTP Verb | Endpoint | Description |
+| ---------------- | ------------- |  -------------- |
+|  **Get**  | v1/DiningHalls | Provides food items from the a dining halls at UOFM
 
-| HTTP Verb | Endpoint | Description | 
-| Get | /recipes/complexSearch | Searching through recipes/meal
-| Get | /recipes/{id}/similar | getting similar id
-| Get | /recipes/{id}/nutritionWidget.json | nutrition information of meal
-| Get | /recipes/{id}/summary | Automatically generate a summary of the recipe 
-| Get | /recipes/{id}/priceBreakdownWidget.json| Generates a recipes price breakdown 
-| Get | recipes/cuisine | Classifies a recipes cuisine
+
+- Base URL - https://spoonacular.com/food-api/
+
+
+| HTTP Verb | Endpoint | Description |
+| ---------------- | ------------- |  -------------- |
+| **Get** | /recipes/complexSearch | Searching through recipes/meal
+|  **Get** | /recipes/{id}/similar | getting similar id
+|  **Get** | /recipes/{id}/nutritionWidget.json | nutrition information of meal
+|  **Get** | /recipes/{id}/summary | Automatically generate a summary of the recipe 
+|  **Get** | /recipes/{id}/priceBreakdownWidget.json| Generates a recipes price breakdown 
+|   **Get** | recipes/cuisine | Classifies a recipes cuisine
+|   **Get** | /users/connect | Connects user's information to Spoonacular for food plannning
+
+
 
