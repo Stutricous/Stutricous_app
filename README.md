@@ -92,7 +92,7 @@ Model: User
 | profilePicture  | Image |  profile picture for the user  |
 | userName | String |  A user's unique username |
 | bodyWeight | Number | A user's current body weight |
-| dietEmphasis | Array a list of a user's diet emphasis | 
+| dietEmphasis | Array |Array a list of a user's diet emphasis | 
 
 Model: Food Item
 |  Property | Type | Description |
