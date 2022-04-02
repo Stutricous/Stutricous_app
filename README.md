@@ -13,11 +13,11 @@ Stutricous is an app that can recommend meals based on your general health goals
 ### App Evaluation
 [Evaluation of your app across the following attributes]
 - Category: Health and Fitness and Social Networking
-- Mobile: This app would be primarily created for a moblie applicaiton; however, it could surely be ported onto a website version. Additionally, the application could be created on Andriod as well. 
+- Mobile: This app would be primarily created for a mobile application; however, it could surely be ported onto a website version. Additionally, the application could be created on Android as well. 
 - Story: User creates a food emphasis and meals are shown on their feed. Additionally, they can communicate with friends and other people on campus to discuss anything related to meals + health and fitness.  
 - Market: The market could be anyone, but there is a general focus towards students who are currently on a college campus. 
 - Habit: This app could be used everyday and as often as the user wants to. Health is important everyday, and this app can help with that. 
-- Scope: First we want to see if we can pull together APIs and technologies to make this applicaiton work with anyone who wants meal recommendations in the context of just a user's geographical location, and their food emphasis. Next, we will want to see if it is possible to pull in data from college campus' dining halls to see if we can create meal options for them. This might not be avaliable in V1, but we hope to continue working after the prototype version. 
+- Scope: First we want to see if we can pull together APIs and technologies to make this application work with anyone who wants meal recommendations in the context of just a user's geographical location, and their food emphasis. Next, we will want to see if it is possible to pull in data from college campus' dining halls to see if we can create meal options for them. This might not be available in V1, but we hope to continue working after the prototype version. 
 
 ## Product Spec
 
@@ -25,7 +25,7 @@ Stutricous is an app that can recommend meals based on your general health goals
 
 **Required Must-have Stories**
 * User should be able to login or should be able to create a new account.
-* User must be able to have a diet emphasis(i.e 'weight loss', 'vegeterian')
+* User must be able to have a diet emphasis(i.e 'weight loss', 'vegetarian')
 * User should be able to see a list of recommended meals given their diet emphasis.
 * User should be able to see a meal detail screen per meal item. 
 * User can plan meals for each day of the week.
@@ -45,12 +45,12 @@ Stutricous is an app that can recommend meals based on your general health goals
    * User should be able to log in.
 * Register Screen:
    * User should be able to create an account 
-   * User must be able to have a diet emphasis(i.e 'weight loss', 'vegeterian')
+   * User must be able to have a diet emphasis(i.e 'weight loss', 'vegetarian')
 * Stream:
    * User should be able to see a list of meals given their diet emphasis.
 * Recommended Next Meal Screen
    * User should be able to see a "Recommended Next Meal" where the user can see their recommended meal depending on different variables (i.e "Current time of day", "")
-   * Geo-features could be added to the application and meal grociery lists could be created and viewed at a grocery near you or on campus.(Optional)
+   * Geo-features could be added to the application and meal grocery lists could be created and viewed at a grocery near you or on campus.(Optional)
 * Detail:
    * User should be able to see a meal detail screen per meal item.
 * Search for meal 
@@ -142,7 +142,7 @@ Model: Food Item
 |  **Get** | /recipes/{id}/summary | Automatically generate a summary of the recipe 
 |  **Get** | /recipes/{id}/priceBreakdownWidget.json| Generates a recipes price breakdown 
 |   **Get** | recipes/cuisine | Classifies a recipes cuisine
-|   **Get** | /users/connect | Connects user's information to Spoonacular for food plannning
+|   **Get** | /users/connect | Connects user's information to Spoonacular for food planning
 
 
 
