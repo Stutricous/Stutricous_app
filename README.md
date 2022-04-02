@@ -111,11 +111,12 @@ Model: Food Item
 
 ### Networking
 * Login Screen:
-   * (Read/Get) User request to login
+   * (Read/Get) User request to login(Parse)
 * Register Screen:
-   * (Create/Post) A New user
+   * (Create/Post) A New user is created(Parse).
+   * (Read/Get)
 * All meal diet emphasis screen:
-   * (Read/Get) Meals that 
+   * (Read/Get) Meals and food items that are placed with(Spoonacular)
 * Recommended Next Meal Screen
    * User should be able to see a "Recommended Next Meal" where the user can see their recommended meal depending on different variables (i.e "Current time of day", "")
    * Geo-features could be added to the application and meal grociery lists could be created and viewed at a grocery near you or on campus.(Optional)
@@ -128,7 +129,20 @@ Model: Food Item
 * Messaging/DM
    * (Read/Get) Get all direct messages that the user is involved with 
    * (Updated/Put) Send a message to a user.
-### Existing API Endpoints 
-- Base URL - 
-| HTTP Verb | Endpoint| Description | 
-| name | type of call |  get        |
+### Existing API Endpoints
+
+
+- Base URL - https://michigan-dining-api.tendiesti.me/
+
+- Base URL - https://spoonacular.com/food-api/
+| HTTP Verb | Endpoint | Description | 
+| Get | v1/DiningHalls | Provides food items from the a dining halls at UOFM
+
+| HTTP Verb | Endpoint | Description | 
+| Get | /recipes/complexSearch | Searching through recipes/meal
+| Get | /recipes/{id}/similar | getting similar id
+| Get | /recipes/{id}/nutritionWidget.json | nutrition information of meal
+| Get | /recipes/{id}/summary | Automatically generate a summary of the recipe 
+| Get | /recipes/{id}/priceBreakdownWidget.json| Generates a recipes price breakdown 
+| Get | recipes/cuisine | Classifies a recipes cuisine
+
