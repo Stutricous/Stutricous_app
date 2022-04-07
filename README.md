@@ -1,4 +1,4 @@
-# Stutricous 
+# Sturicous 
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -8,7 +8,7 @@
 
 ## Overview
 ### Description
-Stutricous is an app that can recommend meals based on your general health goals. The goal is to integrate this with on campus food supplies so that way students can always have food and recipes in their pocket that they know they can always look at. 
+Sturicous is an app that can recommend meals based on your general health goals. The goal is to integrate this with on campus food supplies so that way students can always have food and recipes in their pocket that they know they can always look at. 
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
