@@ -1,0 +1,6 @@
+module Pods_SturicousApp {
+  umbrella header "Pods-SturicousApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

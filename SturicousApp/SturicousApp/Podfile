@@ -1,0 +1,12 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '14.0'
+
+target 'SturicousApp' do
+  
+  # Pods for SturicousApp
+  pod 'Alamofire'
+  pod 'AlamofireImage'
+  pod "Parse"
+  pod "MessageInputBar"
+
+end
