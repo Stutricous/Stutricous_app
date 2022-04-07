@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7F3FE5658AEC4AF2B296EDA73A218182"
-               BuildableName = "libParse.a"
+               BuildableName = "Parse.framework"
                BlueprintName = "Parse"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
