@@ -13,6 +13,7 @@
 		0CE435F927FE738700734910 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CE435F727FE738700734910 /* Main.storyboard */; };
 		0CE435FB27FE738800734910 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CE435FA27FE738800734910 /* Assets.xcassets */; };
 		0CE435FE27FE738800734910 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CE435FC27FE738800734910 /* LaunchScreen.storyboard */; };
+		24CE20924407D517568DD313 /* libPods-SturicousApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE32102B03DD2FEA9F83CA8A /* libPods-SturicousApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		0CE435FA27FE738800734910 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CE435FD27FE738800734910 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0CE435FF27FE738800734910 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE32102B03DD2FEA9F83CA8A /* libPods-SturicousApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SturicousApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEBAA269FC437F032C0F14E6 /* Pods-SturicousApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SturicousApp.debug.xcconfig"; path = "Target Support Files/Pods-SturicousApp/Pods-SturicousApp.debug.xcconfig"; sourceTree = "<group>"; };
+		E3AC7159B8D8AF8A0430DC98 /* Pods-SturicousApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SturicousApp.release.xcconfig"; path = "Target Support Files/Pods-SturicousApp/Pods-SturicousApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24CE20924407D517568DD313 /* libPods-SturicousApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				0CE435F027FE738700734910 /* SturicousApp */,
 				0CE435EF27FE738700734910 /* Products */,
+				780AD3369961EA70B6C1E89C /* Pods */,
+				D91742FA8ECB235EDC019AAC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = SturicousApp;
 			sourceTree = "<group>";
 		};
+		780AD3369961EA70B6C1E89C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DEBAA269FC437F032C0F14E6 /* Pods-SturicousApp.debug.xcconfig */,
+				E3AC7159B8D8AF8A0430DC98 /* Pods-SturicousApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D91742FA8ECB235EDC019AAC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE32102B03DD2FEA9F83CA8A /* libPods-SturicousApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0CE4360227FE738800734910 /* Build configuration list for PBXNativeTarget "SturicousApp" */;
 			buildPhases = (
+				730E55CF49D99026F44DD74E /* [CP] Check Pods Manifest.lock */,
 				0CE435EA27FE738700734910 /* Sources */,
 				0CE435EB27FE738700734910 /* Frameworks */,
 				0CE435EC27FE738700734910 /* Resources */,
+				85956EB4B54A676491626574 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		730E55CF49D99026F44DD74E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SturicousApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85956EB4B54A676491626574 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SturicousApp/Pods-SturicousApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SturicousApp/Pods-SturicousApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SturicousApp/Pods-SturicousApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0CE435EA27FE738700734910 /* Sources */ = {
@@ -284,6 +353,7 @@
 		};
 		0CE4360327FE738800734910 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEBAA269FC437F032C0F14E6 /* Pods-SturicousApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -311,6 +381,7 @@
 		};
 		0CE4360427FE738800734910 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3AC7159B8D8AF8A0430DC98 /* Pods-SturicousApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
