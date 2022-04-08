@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7B28C4D8238B984881411C5F51BC30D6"
-               BuildableName = "libMessageInputBar.a"
+               BuildableName = "MessageInputBar.framework"
                BlueprintName = "MessageInputBar"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

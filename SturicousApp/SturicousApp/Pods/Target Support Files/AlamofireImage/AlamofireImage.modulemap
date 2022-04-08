@@ -1,4 +1,4 @@
-module AlamofireImage {
+framework module AlamofireImage {
   umbrella header "AlamofireImage-umbrella.h"
 
   export *

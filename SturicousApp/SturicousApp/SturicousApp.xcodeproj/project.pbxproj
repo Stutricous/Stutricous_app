@@ -13,7 +13,8 @@
 		0CE435F927FE738700734910 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CE435F727FE738700734910 /* Main.storyboard */; };
 		0CE435FB27FE738800734910 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CE435FA27FE738800734910 /* Assets.xcassets */; };
 		0CE435FE27FE738800734910 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CE435FC27FE738800734910 /* LaunchScreen.storyboard */; };
-		24CE20924407D517568DD313 /* libPods-SturicousApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE32102B03DD2FEA9F83CA8A /* libPods-SturicousApp.a */; };
+		82094B8735D06CD7D9C95040 /* Pods_SturicousApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D273EF1C695880CD4BFAB6A /* Pods_SturicousApp.framework */; };
+		EB3760F027FF7DDA00AD7EA9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3760EF27FF7DDA00AD7EA9 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +26,10 @@
 		0CE435FA27FE738800734910 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CE435FD27FE738800734910 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0CE435FF27FE738800734910 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE32102B03DD2FEA9F83CA8A /* libPods-SturicousApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SturicousApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D273EF1C695880CD4BFAB6A /* Pods_SturicousApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SturicousApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEBAA269FC437F032C0F14E6 /* Pods-SturicousApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SturicousApp.debug.xcconfig"; path = "Target Support Files/Pods-SturicousApp/Pods-SturicousApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E3AC7159B8D8AF8A0430DC98 /* Pods-SturicousApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SturicousApp.release.xcconfig"; path = "Target Support Files/Pods-SturicousApp/Pods-SturicousApp.release.xcconfig"; sourceTree = "<group>"; };
+		EB3760EF27FF7DDA00AD7EA9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,7 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24CE20924407D517568DD313 /* libPods-SturicousApp.a in Frameworks */,
+				82094B8735D06CD7D9C95040 /* Pods_SturicousApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +69,7 @@
 				0CE435F327FE738700734910 /* SceneDelegate.swift */,
 				0CE435F527FE738700734910 /* ViewController.swift */,
 				0CE435F727FE738700734910 /* Main.storyboard */,
+				EB3760EF27FF7DDA00AD7EA9 /* LoginViewController.swift */,
 				0CE435FA27FE738800734910 /* Assets.xcassets */,
 				0CE435FC27FE738800734910 /* LaunchScreen.storyboard */,
 				0CE435FF27FE738800734910 /* Info.plist */,
@@ -80,14 +83,13 @@
 				DEBAA269FC437F032C0F14E6 /* Pods-SturicousApp.debug.xcconfig */,
 				E3AC7159B8D8AF8A0430DC98 /* Pods-SturicousApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		D91742FA8ECB235EDC019AAC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DE32102B03DD2FEA9F83CA8A /* libPods-SturicousApp.a */,
+				5D273EF1C695880CD4BFAB6A /* Pods_SturicousApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -103,7 +105,7 @@
 				0CE435EA27FE738700734910 /* Sources */,
 				0CE435EB27FE738700734910 /* Frameworks */,
 				0CE435EC27FE738700734910 /* Resources */,
-				85956EB4B54A676491626574 /* [CP] Copy Pods Resources */,
+				9E8278FBD922F1B585CB5123 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,21 +185,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		85956EB4B54A676491626574 /* [CP] Copy Pods Resources */ = {
+		9E8278FBD922F1B585CB5123 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SturicousApp/Pods-SturicousApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SturicousApp/Pods-SturicousApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SturicousApp/Pods-SturicousApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SturicousApp/Pods-SturicousApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SturicousApp/Pods-SturicousApp-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SturicousApp/Pods-SturicousApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -207,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB3760F027FF7DDA00AD7EA9 /* LoginViewController.swift in Sources */,
 				0CE435F627FE738700734910 /* ViewController.swift in Sources */,
 				0CE435F227FE738700734910 /* AppDelegate.swift in Sources */,
 				0CE435F427FE738700734910 /* SceneDelegate.swift in Sources */,
