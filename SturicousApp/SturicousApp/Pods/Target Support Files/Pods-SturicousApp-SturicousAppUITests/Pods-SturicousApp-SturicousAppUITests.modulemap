@@ -1,0 +1,6 @@
+framework module Pods_SturicousApp_SturicousAppUITests {
+  umbrella header "Pods-SturicousApp-SturicousAppUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

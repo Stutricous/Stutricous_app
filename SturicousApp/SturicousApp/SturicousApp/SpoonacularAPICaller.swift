@@ -5,10 +5,14 @@
 //  Created by Rj O'Neal on 4/9/22.
 //
 
+
 import Foundation
+import UIKit
+import BDBOAuth1Manager
+
 class SpoonacularAPICaller: BDBOAuth1SessionManager
 {
-    static let client = SpoonacularAPICaller(baseURL: URL(string: "https://spoonacular.com/food-api/"), consumerKey: "", consumerSecret: "")
+    static let client = SpoonacularAPICaller(baseURL: URL(string: "https://spoonacular.com/food-api/"), consumerKey: "a3e448f17278429db089dbff7bf64451", consumerSecret: "")
     var loginSuccess: (() -> ())?
     var loginFailure: ((Error) -> ())?
     
@@ -36,3 +40,8 @@ class SpoonacularAPICaller: BDBOAuth1SessionManager
             failure(error)
         })
     }
+ 
+
+}
+
+
