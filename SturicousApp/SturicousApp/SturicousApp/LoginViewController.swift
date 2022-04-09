@@ -9,6 +9,25 @@ import UIKit
 import Parse
 
 class LoginViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+       // testParseConnection()
+    }
+    
+/* func testParseConnection(){
+        let myObj = PFObject(className:"FirstClass")
+        myObj["message"] = "Hey ! First message from Swift. Parse is now connected"
+        myObj.saveInBackground { (success, error) in
+            if(success){
+                print("You are connected!")
+            }else{
+                print("An error has occurred!")
+            }
+        }
+    }
+ */
+
 
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -17,11 +36,7 @@ class LoginViewController: UIViewController {
     
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+    
     @IBAction func onSignIn(_ sender: Any) {
     }
     

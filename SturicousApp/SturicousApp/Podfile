@@ -8,9 +8,20 @@ target 'SturicousApp' do
   # Pods for SturicousApp
   pod 'Alamofire'
   pod 'AlamofireImage'
-  pod "Parse"
-  pod "MessageInputBar"
-  inherit! :search_paths
-    
+  pod 'Parse'
+  pod 'MessageInputBar'
+  pod 'AFNetworking'
+  pod 'BDBOAuth1Manager'
+
+  target 'SturicousAppTests' do
+    inherit! :search_paths
+    # Pods for testing
+   pod 'Parse'
+  end
+
+  target 'SturicousAppUITests' do
+    # Pods for testing
+   pod 'Parse'
+  end
 
 end
