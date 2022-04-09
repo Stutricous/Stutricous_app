@@ -1,4 +1,4 @@
-module Pods_SturicousApp {
+framework module Pods_SturicousApp {
   umbrella header "Pods-SturicousApp-umbrella.h"
 
   export *
