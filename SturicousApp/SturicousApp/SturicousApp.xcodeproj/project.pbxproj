@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		0CE435F227FE738700734910 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE435F127FE738700734910 /* AppDelegate.swift */; };
 		0CE435F427FE738700734910 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE435F327FE738700734910 /* SceneDelegate.swift */; };
-		0CE435F627FE738700734910 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE435F527FE738700734910 /* ViewController.swift */; };
 		0CE435F927FE738700734910 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CE435F727FE738700734910 /* Main.storyboard */; };
 		0CE435FB27FE738800734910 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CE435FA27FE738800734910 /* Assets.xcassets */; };
 		0CE435FE27FE738800734910 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CE435FC27FE738800734910 /* LaunchScreen.storyboard */; };
+		7582AC1628020F9A001FED1B /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7582AC1528020F99001FED1B /* FeedViewController.swift */; };
 		82094B8735D06CD7D9C95040 /* Pods_SturicousApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D273EF1C695880CD4BFAB6A /* Pods_SturicousApp.framework */; };
 		EB3760F027FF7DDA00AD7EA9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3760EF27FF7DDA00AD7EA9 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
@@ -21,12 +21,12 @@
 		0CE435EE27FE738700734910 /* SturicousApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SturicousApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CE435F127FE738700734910 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CE435F327FE738700734910 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0CE435F527FE738700734910 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0CE435F827FE738700734910 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0CE435FA27FE738800734910 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CE435FD27FE738800734910 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0CE435FF27FE738800734910 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D273EF1C695880CD4BFAB6A /* Pods_SturicousApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SturicousApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7582AC1528020F99001FED1B /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		DEBAA269FC437F032C0F14E6 /* Pods-SturicousApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SturicousApp.debug.xcconfig"; path = "Target Support Files/Pods-SturicousApp/Pods-SturicousApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E3AC7159B8D8AF8A0430DC98 /* Pods-SturicousApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SturicousApp.release.xcconfig"; path = "Target Support Files/Pods-SturicousApp/Pods-SturicousApp.release.xcconfig"; sourceTree = "<group>"; };
 		EB3760EF27FF7DDA00AD7EA9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -67,12 +67,12 @@
 			children = (
 				0CE435F127FE738700734910 /* AppDelegate.swift */,
 				0CE435F327FE738700734910 /* SceneDelegate.swift */,
-				0CE435F527FE738700734910 /* ViewController.swift */,
 				0CE435F727FE738700734910 /* Main.storyboard */,
 				EB3760EF27FF7DDA00AD7EA9 /* LoginViewController.swift */,
 				0CE435FA27FE738800734910 /* Assets.xcassets */,
 				0CE435FC27FE738800734910 /* LaunchScreen.storyboard */,
 				0CE435FF27FE738800734910 /* Info.plist */,
+				7582AC1528020F99001FED1B /* FeedViewController.swift */,
 			);
 			path = SturicousApp;
 			sourceTree = "<group>";
@@ -210,8 +210,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB3760F027FF7DDA00AD7EA9 /* LoginViewController.swift in Sources */,
-				0CE435F627FE738700734910 /* ViewController.swift in Sources */,
 				0CE435F227FE738700734910 /* AppDelegate.swift in Sources */,
+				7582AC1628020F9A001FED1B /* FeedViewController.swift in Sources */,
 				0CE435F427FE738700734910 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
