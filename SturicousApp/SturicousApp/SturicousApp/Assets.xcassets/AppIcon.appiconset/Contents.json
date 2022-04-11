@@ -31,11 +31,13 @@
       "size" : "40x40"
     },
     {
+      "filename" : "Stutricous120x120png.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
+      "filename" : "Stutricous180x180.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"
