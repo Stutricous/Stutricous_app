@@ -81,6 +81,13 @@ Sturicous is an app that can recommend meals based on your general health goals.
    * Messaging/DM
 * Messaging/DM 
    * Profile
+
+## Week 1 Build Walkthrough
+
+Here's a walkthrough of implemented user stories:
+
+<img src='https://github.com/Stutricous/Stutricous_app/blob/Yug_Dev/SturicousApp/SturicousApp/StutriousBuildWeek1.gif' title='Week 1 Build Walkthrough' width='' alt='Week 1 Build Walkthrough' />
+
 ## Wireframes
 ![SecondScannedDocuments](https://user-images.githubusercontent.com/77123840/161363751-d32aefc9-6887-4ce9-ba9f-040f284281b3.jpeg)
 ## Schema 
