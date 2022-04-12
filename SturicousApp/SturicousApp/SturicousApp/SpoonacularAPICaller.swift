@@ -8,40 +8,52 @@
 
 import Foundation
 import UIKit
-import BDBOAuth1Manager
-
-class SpoonacularAPICaller: BDBOAuth1SessionManager
+class SpoonacularAPICaller
 {
-    static let client = SpoonacularAPICaller(baseURL: URL(string: "https://spoonacular.com/food-api/"), consumerKey: "a3e448f17278429db089dbff7bf64451", consumerSecret: "")
-    var loginSuccess: (() -> ())?
-    var loginFailure: ((Error) -> ())?
-    
-    func handleOpenUrl(url: URL){
-        let requestToken = BDBOAuth1Credential(queryString: url.query)
-        SpoonacularAPICaller.client?.fetchAccessToken(withPath: "oauth/access_token", method: "POST", requestToken: requestToken, success: { (accessToken: BDBOAuth1Credential!) in
-            self.loginSuccess?()
-        }, failure: { (error: Error!) in
-            self.loginFailure?(error)
-        })
+    private static var apiKey:String = "57021b3f90dd45afae68b1f9a0316c93"
+    private static var baseUrl:String = "https://api.spoonacular.com"
+    static func getData(_ params:[String:Any], _ endPoint: String, success:@escaping ([String:Any]) -> ())
+    { // suppose you receive an array
+        // api call here {
+        var components = URLComponents(string: "\(self.baseUrl)\(endPoint)")!
+        components.queryItems = params.map { URLQueryItem(name: $0, value: String(describing: $1))
+        }
+        //let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+        let request = URLRequest(url: components.url!)
+        print(components.url?.absoluteString)
+        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+        let task = session.dataTask(with: request)
+        { (data, response, error) in
+             // This will run when the network request returns
+             if let error = error {
+                    print(error.localizedDescription)
+             } else if let data = data {
+                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
+                 success(dataDictionary)
+             }
+        }
+        task.resume()
     }
-    func getDictionaryRequest(url: String, parameters: [String:Any], success: @escaping (NSDictionary) -> (), failure: @escaping (Error) -> ()){
-        SpoonacularAPICaller.client?.get(url, parameters: parameters, progress: nil, success: { (task: URLSessionDataTask, response: Any?) in
-            success(response as! NSDictionary)
-        }, failure: { (task: URLSessionDataTask?, error: Error) in
-            failure(error)
-        })
-    }
-    
-    func getDictionariesRequest(url: String, parameters: [String:Any], success: @escaping ([NSDictionary]) -> (), failure: @escaping (Error) -> ())
-    {
-        SpoonacularAPICaller.client?.get(url, parameters: parameters, progress: nil, success: {(task: URLSessionDataTask, response: Any?) in
-            success(response as! [NSDictionary])
-        }, failure: { (task: URLSessionDataTask?, error: Error) in
-            failure(error)
-        })
-    }
- 
-
 }
+
+    
+//    static func getAPIData(_ params:[String:Any], _ endPoint: String, _ completion @escaping ([String:Any]) -> ())
+//    {
+//        let url = URL(string: "\(self.baseUrl)/\(endPoint)?apiKey=\(self.apiKey)")!
+//        var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+//        request.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
+//        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+//        let task = session.dataTask(with: request) { (data, response, error) in
+//             // This will run when the network request returns
+//             if let error = error {
+//                    print(error.localizedDescription)
+//             } else if let data = data {
+//                    let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+//
+//             }
+//        }
+//        task.resume()
+//    }
+
 
 

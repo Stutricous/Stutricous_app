@@ -27,21 +27,35 @@ class LoginViewController: UIViewController {
         }
     }
  */
-
-
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
     
     
-    
-    
-    
-    @IBAction func onSignIn(_ sender: Any) {
+    @IBAction func onSignIn(_ sender: Any)
+    {
+        
     }
     
     
-    @IBAction func onSignUp(_ sender: Any) {
+    @IBAction func onSignUp(_ sender: Any)
+    {
+        let newuser = PFUser()
+        let user = PFUser()
+        user.username = self.usernameField.text
+        user.password = self.passwordField.text
+        user.signUpInBackground()
+        {
+            (success, error) in
+            if success
+            {
+                self.performSegue(withIdentifier: "signUpSegue", sender: nil)
+            }
+            else
+            {
+                print("Error: \(error)")
+            }
+        }
     }
     
     

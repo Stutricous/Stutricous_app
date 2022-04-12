@@ -64,7 +64,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onSignUp:" destination="uSz-nU-iNY" eventType="touchUpInside" id="Nkx-0r-728"/>
-                                    <segue destination="1Sq-WT-RZM" kind="presentation" modalPresentationStyle="fullScreen" id="Jpi-lQ-r6c"/>
+                                    <segue destination="1Sq-WT-RZM" kind="presentation" identifier="signUpSegue" modalPresentationStyle="fullScreen" id="Jpi-lQ-r6c"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -119,23 +119,93 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RlO-t4-Oy1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5045" y="244"/>
+            <point key="canvasLocation" x="5006" y="285"/>
         </scene>
-        <!--Item 1-->
+        <!--Meal Feed-->
         <scene sceneID="xEH-J5-bbf">
             <objects>
-                <viewController id="Uit-D5-r2N" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h9t-TD-4YW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="Uit-D5-r2N" customClass="MainFeedTableViewController" customModule="SturicousApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xze-BQ-qoc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ff8-75-V3S">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MealCell" rowHeight="219" id="PFv-EI-5cc" customClass="MealTableViewCell" customModule="SturicousApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="219"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PFv-EI-5cc" id="ThT-cC-wqM">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="219"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mfk-sk-pcE">
+                                                    <rect key="frame" x="20" y="11" width="186" height="173"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="186" id="2Zh-VU-hyy"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waffles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0d-dr-xXb">
+                                                    <rect key="frame" x="214" y="11" width="193" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="3Bt-oy-rMJ"/>
+                                                        <constraint firstAttribute="width" constant="193" id="gag-6t-nVD"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cq2-r1-4Yu">
+                                                    <rect key="frame" x="214" y="40" width="165" height="134"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="mfk-sk-pcE" secondAttribute="bottom" constant="24" id="Bof-Ci-IdL"/>
+                                                <constraint firstItem="mfk-sk-pcE" firstAttribute="top" secondItem="R0d-dr-xXb" secondAttribute="top" id="SuJ-Z7-FFG"/>
+                                                <constraint firstItem="R0d-dr-xXb" firstAttribute="leading" secondItem="Cq2-r1-4Yu" secondAttribute="leading" id="USj-LP-DIt"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Cq2-r1-4Yu" secondAttribute="bottom" constant="34" id="Zy1-2r-0hO"/>
+                                                <constraint firstItem="R0d-dr-xXb" firstAttribute="leading" secondItem="mfk-sk-pcE" secondAttribute="trailing" constant="8" symbolic="YES" id="hI0-RG-7aP"/>
+                                                <constraint firstItem="Cq2-r1-4Yu" firstAttribute="top" secondItem="R0d-dr-xXb" secondAttribute="bottom" constant="8" symbolic="YES" id="lza-VD-nsB"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Cq2-r1-4Yu" secondAttribute="trailing" constant="15" id="uO0-Nf-DQx"/>
+                                                <constraint firstItem="mfk-sk-pcE" firstAttribute="top" secondItem="ThT-cC-wqM" secondAttribute="topMargin" id="vDL-M3-Xpp"/>
+                                                <constraint firstItem="mfk-sk-pcE" firstAttribute="leading" secondItem="ThT-cC-wqM" secondAttribute="leadingMargin" id="wpn-va-ggU"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="Cq2-r1-4Yu" id="tDl-DP-upk"/>
+                                            <outlet property="mealImage" destination="mfk-sk-pcE" id="dPH-TY-HF6"/>
+                                            <outlet property="mealNameLabel" destination="R0d-dr-xXb" id="nUm-Id-psD"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="kcH-mF-Rdr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ff8-75-V3S" firstAttribute="top" secondItem="Xze-BQ-qoc" secondAttribute="top" id="OMj-wN-hc1"/>
+                            <constraint firstItem="Ff8-75-V3S" firstAttribute="leading" secondItem="Xze-BQ-qoc" secondAttribute="leading" id="UfV-5e-Pea"/>
+                            <constraint firstAttribute="trailing" secondItem="Ff8-75-V3S" secondAttribute="trailing" id="dhf-LY-RQQ"/>
+                            <constraint firstAttribute="bottom" secondItem="Ff8-75-V3S" secondAttribute="bottom" id="wQz-zX-Z5h"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="MWt-tY-XqQ"/>
+                    <navigationItem key="navigationItem" title="Meal Feed" id="gcm-6J-RQf">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="LJJ-2x-SiZ">
+                            <color key="tintColor" systemColor="systemGreenColor"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Ff8-75-V3S" id="JRc-5Q-nam"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="h9t-TD-4YW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4835" y="-474"/>
+            <point key="canvasLocation" x="5915.9420289855079" y="-492.1875"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="LrO-P3-Y3P">
@@ -144,10 +214,12 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="u9U-mm-mZn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemGreenColor"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Uit-D5-r2N" kind="relationship" relationship="viewControllers" id="d0t-E5-eRf"/>
+                        <segue destination="Ug1-fK-ZKf" kind="relationship" relationship="viewControllers" id="d0t-E5-eRf"/>
                         <segue destination="dnS-fY-gwK" kind="relationship" relationship="viewControllers" id="B9E-fJ-Awu"/>
                     </connections>
                 </tabBarController>
@@ -155,10 +227,10 @@
             </objects>
             <point key="canvasLocation" x="3239" y="-167"/>
         </scene>
-        <!--View Controller-->
+        <!--Diet Preferences View Controller-->
         <scene sceneID="8Cd-HV-qoH">
             <objects>
-                <viewController id="1Sq-WT-RZM" sceneMemberID="viewController">
+                <viewController id="1Sq-WT-RZM" customClass="DietPreferencesViewController" customModule="SturicousApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bz1-g5-R4M">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,6 +281,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Submit"/>
                                 <connections>
+                                    <action selector="onSubmit:" destination="1Sq-WT-RZM" eventType="touchUpInside" id="HeR-fb-Zih"/>
                                     <segue destination="bSU-bS-UwQ" kind="presentation" modalPresentationStyle="fullScreen" id="5yz-yj-vUq"/>
                                 </connections>
                             </button>
@@ -216,10 +289,42 @@
                         <viewLayoutGuide key="safeArea" id="8lh-q4-Ppm"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <connections>
+                        <outlet property="atkinsBtn" destination="RKw-jv-ka1" id="oas-6m-I2m"/>
+                        <outlet property="ketogenicBtn" destination="7YV-Me-89c" id="3cH-dA-jQh"/>
+                        <outlet property="veganBtn" destination="2so-PP-NPV" id="0eR-9F-GyB"/>
+                        <outlet property="vegeterianBtn" destination="80b-BO-NK5" id="6E7-ne-Nd2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j3Q-pp-j1m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1368" y="665"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="kmF-gv-cRJ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E3g-HZ-qF1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ug1-fK-ZKf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="list.dash.header.rectangle" catalog="system" id="MWt-tY-XqQ">
+                        <color key="badgeColor" systemColor="systemGreenColor"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="U8T-vF-FeK">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Uit-D5-r2N" kind="relationship" relationship="rootViewController" id="Vse-Hr-TDv"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="5005.7971014492759" y="-492.1875"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -227,6 +332,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="company logo" width="500" height="500"/>
+        <image name="list.dash.header.rectangle" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
