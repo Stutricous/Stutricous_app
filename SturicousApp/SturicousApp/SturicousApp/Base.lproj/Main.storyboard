@@ -124,7 +124,6 @@
         <!--Meal Feed-->
         <scene sceneID="xEH-J5-bbf">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="h9t-TD-4YW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="Uit-D5-r2N" customClass="MainFeedTableViewController" customModule="SturicousApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xze-BQ-qoc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -204,6 +203,7 @@
                         <outlet property="tableView" destination="Ff8-75-V3S" id="JRc-5Q-nam"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h9t-TD-4YW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5915.9420289855079" y="-492.1875"/>
         </scene>
@@ -303,7 +303,6 @@
         <!--Home-->
         <scene sceneID="kmF-gv-cRJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E3g-HZ-qF1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ug1-fK-ZKf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="list.dash.header.rectangle" catalog="system" id="MWt-tY-XqQ">
                         <color key="badgeColor" systemColor="systemGreenColor"/>
@@ -323,6 +322,7 @@
                         <segue destination="Uit-D5-r2N" kind="relationship" relationship="rootViewController" id="Vse-Hr-TDv"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E3g-HZ-qF1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5005.7971014492759" y="-492.1875"/>
         </scene>
