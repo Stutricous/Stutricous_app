@@ -10,10 +10,8 @@ import CoreData
 import Parse
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+class AppDelegate: UIResponder, UIApplicationDelegate
+{
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let configuration = ParseClientConfiguration{
             $0.applicationId = "7ng2dEdGlqF6SDOBOGA8b32hsEkk1aV9VuLFTppa"

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0C2FD7B92802135E00BCF67D /* SpoonacularAPICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2FD7B82802135E00BCF67D /* SpoonacularAPICaller.swift */; };
+		0CC59822280514E800E3B26E /* DietPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC59821280514E800E3B26E /* DietPreferencesViewController.swift */; };
+		0CC598242805C43000E3B26E /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC598232805C43000E3B26E /* MainFeedViewController.swift */; };
+		0CC598262805C87400E3B26E /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC598252805C87400E3B26E /* MealTableViewCell.swift */; };
 		0CE435F227FE738700734910 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE435F127FE738700734910 /* AppDelegate.swift */; };
 		0CE435F427FE738700734910 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE435F327FE738700734910 /* SceneDelegate.swift */; };
 		0CE435F927FE738700734910 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CE435F727FE738700734910 /* Main.storyboard */; };
@@ -43,6 +46,9 @@
 		052B6A36625AFE0C21F87A9A /* Pods-SturicousAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SturicousAppTests.debug.xcconfig"; path = "Target Support Files/Pods-SturicousAppTests/Pods-SturicousAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		07BA50A9B2F281C93D999258 /* Pods-SturicousApp-SturicousAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SturicousApp-SturicousAppUITests.release.xcconfig"; path = "Target Support Files/Pods-SturicousApp-SturicousAppUITests/Pods-SturicousApp-SturicousAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		0C2FD7B82802135E00BCF67D /* SpoonacularAPICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoonacularAPICaller.swift; sourceTree = "<group>"; };
+		0CC59821280514E800E3B26E /* DietPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietPreferencesViewController.swift; sourceTree = "<group>"; };
+		0CC598232805C43000E3B26E /* MainFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
+		0CC598252805C87400E3B26E /* MealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
 		0CE435EE27FE738700734910 /* SturicousApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SturicousApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CE435F127FE738700734910 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CE435F327FE738700734910 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,8 +127,11 @@
 				0CE435F127FE738700734910 /* AppDelegate.swift */,
 				0CE435F327FE738700734910 /* SceneDelegate.swift */,
 				0CE435F727FE738700734910 /* Main.storyboard */,
+				0CC598252805C87400E3B26E /* MealTableViewCell.swift */,
+				0CC598232805C43000E3B26E /* MainFeedViewController.swift */,
 				0C2FD7B82802135E00BCF67D /* SpoonacularAPICaller.swift */,
 				EB3760EF27FF7DDA00AD7EA9 /* LoginViewController.swift */,
+				0CC59821280514E800E3B26E /* DietPreferencesViewController.swift */,
 				0CE435FA27FE738800734910 /* Assets.xcassets */,
 				0CE435FC27FE738800734910 /* LaunchScreen.storyboard */,
 				0CE435FF27FE738800734910 /* Info.plist */,
@@ -428,9 +437,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB3760F027FF7DDA00AD7EA9 /* LoginViewController.swift in Sources */,
+				0CC598242805C43000E3B26E /* MainFeedViewController.swift in Sources */,
+				0CC598262805C87400E3B26E /* MealTableViewCell.swift in Sources */,
 				0CE435F227FE738700734910 /* AppDelegate.swift in Sources */,
 				0C2FD7B92802135E00BCF67D /* SpoonacularAPICaller.swift in Sources */,
 				0CE435F427FE738700734910 /* SceneDelegate.swift in Sources */,
+				0CC59822280514E800E3B26E /* DietPreferencesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
