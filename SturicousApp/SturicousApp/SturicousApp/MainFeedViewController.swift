@@ -10,7 +10,6 @@ import AlamofireImage
 
 class MainFeedTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
-    
     @IBOutlet weak var tableView: UITableView!
     private var meals = [[String:Any]]()
     private var savedPreferences = [String]()
@@ -47,10 +46,11 @@ class MainFeedTableViewController: UIViewController, UITableViewDataSource, UITa
     {
         return self.numberOfMeals
     }
-    func numberOfSections(in tableView: UITableView) -> Int {
+    
+    func numberOfSections(in tableView: UITableView) -> Int
+    {
         return 1
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MealCell", for: indexPath) as! MealTableViewCell
@@ -59,20 +59,47 @@ class MainFeedTableViewController: UIViewController, UITableViewDataSource, UITa
         let summary = recipe["summary"] as? String
         let posterPath = recipe["image"] as? String ?? ""
         // URL class makes sure
-        let posterUrl = URL(string: posterPath)
-        cell.mealImage.af.setImage(withURL: posterUrl!)
-        cell.mealNameLabel?.text = title
-        cell.descriptionLabel.text = summary
+        if(posterPath != "")
+        {
+            let posterUrl = URL(string: posterPath)
+            cell.mealImage.af.setImage(withURL: posterUrl!)
+        }
+        cell.mealNameLabel?.text = title ?? ""
+        cell.descriptionLabel.text = summary?.htmlToString ?? ""
         return cell
     }
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+//In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if(segue.identifier == "MealDetailSegue")
+        {
+            let cell = sender as! MealTableViewCell
+            // get the indexPath
+            let indexPath = tableView.indexPath(for: cell)!
+            let recipe = self.meals[indexPath.row]
+            let destination_controller = segue.destination as! MealDetailViewController
+            destination_controller.structureMeal(recipe)
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+        
     }
-    */
+    
 
+}
+
+// we need to additional functionality to the string class inorder to unwrap optional
+extension String {
+    var htmlToAttributedString: NSAttributedString? {
+        guard let data = data(using: .utf8) else { return nil }
+        do {
+            return try NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding:String.Encoding.utf8.rawValue], documentAttributes: nil)
+        } catch {
+            return nil
+        }
+    }
+    var htmlToString: String {
+        return htmlToAttributedString?.string ?? ""
+    }
 }
