@@ -53,7 +53,6 @@
                                 </state>
                                 <connections>
                                     <action selector="onSignIn:" destination="uSz-nU-iNY" eventType="touchUpInside" id="1O1-RQ-NJs"/>
-                                    <segue destination="bSU-bS-UwQ" kind="presentation" identifier="LoginSegue" modalPresentationStyle="fullScreen" id="aQ1-F3-amm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P9U-4E-43w">
@@ -64,7 +63,6 @@
                                 </state>
                                 <connections>
                                     <action selector="onSignUp:" destination="uSz-nU-iNY" eventType="touchUpInside" id="Nkx-0r-728"/>
-                                    <segue destination="1Sq-WT-RZM" kind="presentation" identifier="signUpSegue" modalPresentationStyle="fullScreen" id="Jpi-lQ-r6c"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -99,6 +97,8 @@
                     <connections>
                         <outlet property="passwordField" destination="xH6-Oi-bLm" id="fMJ-aM-J0q"/>
                         <outlet property="usernameField" destination="UQl-yX-aou" id="14F-ll-eM6"/>
+                        <segue destination="Ug1-fK-ZKf" kind="presentation" identifier="loginSegue" id="Uog-0R-u0l"/>
+                        <segue destination="1Sq-WT-RZM" kind="presentation" identifier="signUpSegue" id="J1T-BW-6Ag"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="if8-5m-rTa" sceneMemberID="firstResponder"/>
@@ -126,11 +126,11 @@
             <objects>
                 <viewController id="Uit-D5-r2N" customClass="MainFeedTableViewController" customModule="SturicousApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xze-BQ-qoc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ff8-75-V3S">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MealCell" rowHeight="219" id="PFv-EI-5cc" customClass="MealTableViewCell" customModule="SturicousApp" customModuleProvider="target">
@@ -198,6 +198,9 @@
                     <navigationItem key="navigationItem" title="Meal Feed" id="gcm-6J-RQf">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="LJJ-2x-SiZ">
                             <color key="tintColor" systemColor="systemGreenColor"/>
+                            <connections>
+                                <action selector="onLogOut:" destination="Uit-D5-r2N" id="Mjp-Z1-7ZW"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Search" image="magnifyingglass" catalog="system" id="j0v-xW-nAZ">
                             <color key="tintColor" systemColor="systemGreenColor"/>
@@ -216,7 +219,7 @@
             <objects>
                 <viewController id="5I1-ma-yde" customClass="MealDetailViewController" customModule="SturicousApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EvH-Xb-VZv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1e-aG-ZYs">
@@ -351,7 +354,7 @@
             <objects>
                 <viewController id="1Sq-WT-RZM" customClass="DietPreferencesViewController" customModule="SturicousApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bz1-g5-R4M">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7YV-Me-89c">
@@ -422,13 +425,13 @@
         <!--Home-->
         <scene sceneID="kmF-gv-cRJ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ug1-fK-ZKf" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="FeedNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Ug1-fK-ZKf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="list.dash.header.rectangle" catalog="system" id="MWt-tY-XqQ">
                         <color key="badgeColor" systemColor="systemGreenColor"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="U8T-vF-FeK">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
@@ -447,7 +450,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aQ1-F3-amm"/>
+        <segue reference="Uog-0R-u0l"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="company logo" width="500" height="500"/>
