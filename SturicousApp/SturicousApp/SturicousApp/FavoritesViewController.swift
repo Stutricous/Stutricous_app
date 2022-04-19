@@ -1,24 +1,19 @@
 //
-//  ProfileViewController.swift
+//  FavoritesViewController.swift
 //  SturicousApp
 //
-//  Created by yug brahmbhatt on 4/18/22.
+//  Created by yug brahmbhatt on 4/19/22.
 //
 
 import UIKit
 
-class ProfileViewController: UIViewController {
-    
-    
-    @IBOutlet weak var profilePic: UIImageView!
-    @IBOutlet weak var displayNameLabel: UILabel!
-    @IBOutlet weak var favButton: UIButton!
-    
+class FavoritesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
 
+        // Do any additional setup after loading the view.
+    }
     
 
     /*
