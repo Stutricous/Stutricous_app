@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Parse
 
 class DietPreferencesViewController: UIViewController {
 
@@ -25,6 +26,19 @@ class DietPreferencesViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func savePreferences() {
+        let user = PFUser.current()!
+        
+        user["preferences"] = myPreferences
+        
+        user.saveInBackground { (success, error) in
+            if success {
+                print("User updated")
+            } else {
+                print("Error saving user")
+            }
+        }
+    }
 
     
 

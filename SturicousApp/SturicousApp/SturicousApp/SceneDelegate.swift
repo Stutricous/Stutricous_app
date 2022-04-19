@@ -29,8 +29,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if PFUser.current() != nil {
             //user logged in, so want to bypass login screen
             let main = UIStoryboard(name: "Main", bundle:nil)
-            let feedNavigationController = main.instantiateViewController(withIdentifier: "FeedNavigationController")
-            window?.rootViewController = feedNavigationController
+            let tabViewController = main.instantiateViewController(withIdentifier: "TabViewController")
+            window?.rootViewController = tabViewController
         }
     }
     
@@ -43,7 +43,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
                 self.window?.rootViewController = loginViewController
-                
             }
             
         })
