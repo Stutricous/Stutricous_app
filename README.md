@@ -1,4 +1,4 @@
-# Sturicous 
+.# Sturicous 
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -38,7 +38,6 @@ Sturicous is an app that can recommend meals based on your general health goals.
 * Share meal items between users/friends. 
 * Geo-features could be added to the application so that way meal grociery lists could be created and viewed at a grocery near you.
 * User should be able to change their diet emphasis. 
-* User should to see 
 
 ### 2. Screen Archetypes
 * Login Screen:
