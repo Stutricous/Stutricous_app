@@ -83,10 +83,15 @@ Sturicous is an app that can recommend meals based on your general health goals.
    * Profile
 
 ## Week 1 Build Walkthrough
+- [X] Created a LoginViewController 
+- [X] User is able to signup
+- [X] User sees the main feed
+
+
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/Stutricous/Stutricous_app/blob/Yug_Dev/SturicousApp/SturicousApp/StutriousBuildWeek1.gif' title='Week 1 Build Walkthrough' width='' alt='Week 1 Build Walkthrough' />
+<img src='https://github.com/Stutricous/Stutricous_app/blob/main/SturicousApp/SturicousApp/StutriousBuildWeek1.gif' title='Week 1 Build Walkthrough' width='' alt='Week 1 Build Walkthrough' />
 
 
 ## Week 2 Build Through
