@@ -84,6 +84,17 @@ class MainFeedTableViewController: UIViewController, UITableViewDataSource, UITa
         cell.descriptionLabel.text = summary?.htmlToString ?? ""
         return cell
     }
+    @IBAction func onLogOut(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name("didLogout"), object: nil)
+    }
+    
+    
+    /*------ Dismiss Keyboard and Logout ------*/
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
     
     // MARK: - Navigation
 //In a storyboard-based application, you will often want to do a little preparation before navigation

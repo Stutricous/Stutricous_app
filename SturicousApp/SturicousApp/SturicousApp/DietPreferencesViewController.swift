@@ -11,16 +11,16 @@ import Parse
 class DietPreferencesViewController: UIViewController {
 
     @IBOutlet weak var ketogenicBtn: UIButton!
-    
+
     @IBOutlet weak var mediterraneanBtn: UIButton!
-    
+
     @IBOutlet weak var veganBtn: UIButton!
-    
+
     @IBOutlet weak var vegeterianBtn: UIButton!
-    
+
     private var recipeDictionaries:[[String:Any]]!
     private var myPreferences:Set<String> = []
-    
+
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class DietPreferencesViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
+
     private func setStatesOfButtons()
     {
         self.ketogenicBtn.setTitleColor(UIColor.gray, for: .normal)
@@ -47,7 +47,7 @@ class DietPreferencesViewController: UIViewController {
         self.veganBtn.setTitleColor(UIColor.white, for: .selected)
         self.vegeterianBtn.setTitleColor(UIColor.white, for: .selected)
     }
-    
+
     @IBAction func onKeto(_ sender: UIButton)
     {
         if(sender.isSelected)
@@ -59,7 +59,7 @@ class DietPreferencesViewController: UIViewController {
             self.myPreferences.insert("ketogenic")
         }
         sender.isSelected = !sender.isSelected
-        
+
     }
     @IBAction func onMediterranean(_ sender: UIButton)
     {
@@ -73,7 +73,7 @@ class DietPreferencesViewController: UIViewController {
         }
         sender.isSelected = !sender.isSelected
     }
-    
+
     @IBAction func onVegan(_ sender: UIButton)
     {
         if(sender.isSelected)
@@ -86,7 +86,7 @@ class DietPreferencesViewController: UIViewController {
         }
         sender.isSelected = !sender.isSelected
     }
-    
+
     @IBAction func onVegeterian(_ sender: UIButton)
     {
         if(sender.isSelected)
@@ -98,13 +98,14 @@ class DietPreferencesViewController: UIViewController {
             self.myPreferences.insert("vegan")
         }
         sender.isSelected = !sender.isSelected
-      
+
     }
     @IBAction func onSubmit(_ sender: Any)
     {
         var current_user  = PFUser.current()!
         current_user["preferences"] = Array(self.myPreferences)
-        current_user.saveInBackground {
+        current_user.saveInBackground
+        {
           (success: Bool, error: Error?) in
           if (success) {
               self.performSegue(withIdentifier: "SignUpSegue", sender: nil)

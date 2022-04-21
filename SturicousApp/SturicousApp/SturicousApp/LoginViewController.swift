@@ -33,9 +33,9 @@ class LoginViewController: UIViewController {
                         NotificationCenter.default.post(name: NSNotification.Name("login"), object: nil)
                     }
                 }
-            
+
             }
-        
+
         }
     }
 
@@ -51,11 +51,12 @@ class LoginViewController: UIViewController {
             let password = passwordField.text ?? ""
 
             PFUser.logInWithUsername(inBackground: username, password: password) { (user: PFUser?, error: Error?) in
-                if let error = error {
-                    print("User log in failed: \(error.localizedDescription)")
-                    self.displayLoginError(error: error)
+                if error != nil {
+                    print(error!.localizedDescription)
+                    self.displayLoginError(error: error!)
                 } else {
                     print("User \(username) logged in successfully")
+                    self.performSegue(withIdentifier: "loginSegue", sender: nil)
                     // display view controller that needs to shown after successful login
                     let defaults = UserDefaults.standard
                     defaults.setValue(user!.username, forKey: "userName")
@@ -84,9 +85,9 @@ class LoginViewController: UIViewController {
 
             // call sign up function on the object
             newUser.signUpInBackground { (success: Bool, error: Error?) in
-                if let error = error {
-                    print(error.localizedDescription)
-                    self.displaySignupError(error: error)
+                if error != nil {
+                    print(error!.localizedDescription)
+                    self.displaySignupError(error: error!)
                 } else {
                     print("User \(newUser.username!) Registered successfully")
                     let defaults = UserDefaults.standard
