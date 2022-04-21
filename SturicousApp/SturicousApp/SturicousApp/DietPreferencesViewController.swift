@@ -6,27 +6,26 @@
 //
 
 import UIKit
+import Parse
 
 class DietPreferencesViewController: UIViewController {
 
     @IBOutlet weak var ketogenicBtn: UIButton!
     
-    @IBOutlet weak var atkinsBtn: UIButton!
+    @IBOutlet weak var mediterraneanBtn: UIButton!
     
     @IBOutlet weak var veganBtn: UIButton!
     
     @IBOutlet weak var vegeterianBtn: UIButton!
     
     private var recipeDictionaries:[[String:Any]]!
+    private var myPreferences:Set<String> = []
     
-    private var myPreferences:[String]!
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-    
-
     /*
     // MARK: - Navigation
 
@@ -36,9 +35,82 @@ class DietPreferencesViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    @IBAction func onSubmit(_ sender: Any)
+    
+    private func setStatesOfButtons()
     {
-       
+        self.ketogenicBtn.setTitleColor(UIColor.gray, for: .normal)
+        self.mediterraneanBtn.setTitleColor(UIColor.gray, for: .normal)
+        self.veganBtn.setTitleColor(UIColor.gray, for: .normal)
+        self.vegeterianBtn.setTitleColor(UIColor.gray, for: .normal)
+        self.ketogenicBtn.setTitleColor(UIColor.white, for: .selected)
+        self.mediterraneanBtn.setTitleColor(UIColor.white, for: .selected)
+        self.veganBtn.setTitleColor(UIColor.white, for: .selected)
+        self.vegeterianBtn.setTitleColor(UIColor.white, for: .selected)
     }
     
+    @IBAction func onKeto(_ sender: UIButton)
+    {
+        if(sender.isSelected)
+        {
+            self.myPreferences.remove("ketogenic")
+        }
+        else
+        {
+            self.myPreferences.insert("ketogenic")
+        }
+        sender.isSelected = !sender.isSelected
+        
+    }
+    @IBAction func onMediterranean(_ sender: UIButton)
+    {
+        if(sender.isSelected)
+        {
+            self.myPreferences.remove("mediterranean")
+        }
+        else
+        {
+            self.myPreferences.insert("mediterranean")
+        }
+        sender.isSelected = !sender.isSelected
+    }
+    
+    @IBAction func onVegan(_ sender: UIButton)
+    {
+        if(sender.isSelected)
+        {
+            self.myPreferences.remove("vegan")
+        }
+        else
+        {
+            self.myPreferences.insert("vegan")
+        }
+        sender.isSelected = !sender.isSelected
+    }
+    
+    @IBAction func onVegeterian(_ sender: UIButton)
+    {
+        if(sender.isSelected)
+        {
+            self.myPreferences.remove("vegan")
+        }
+        else
+        {
+            self.myPreferences.insert("vegan")
+        }
+        sender.isSelected = !sender.isSelected
+      
+    }
+    @IBAction func onSubmit(_ sender: Any)
+    {
+        var current_user  = PFUser.current()!
+        current_user["preferences"] = Array(self.myPreferences)
+        current_user.saveInBackground {
+          (success: Bool, error: Error?) in
+          if (success) {
+              self.performSegue(withIdentifier: "SignUpSegue", sender: nil)
+          } else {
+            // There was a problem, check error.description
+          }
+        }
+    }
 }

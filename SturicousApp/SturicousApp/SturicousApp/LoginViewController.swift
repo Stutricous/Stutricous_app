@@ -10,16 +10,41 @@ import Parse
 
 class LoginViewController: UIViewController {
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
+        let defaults = UserDefaults.standard
+        if let curr_userName = defaults.object(forKey: "userName")
+        {
+            if let curr_password = defaults.object(forKey: "password")
+            {
+                PFUser.logInWithUsername(inBackground: curr_userName as! String, password: curr_password as! String)
+                {
+                    (user: PFUser?, error: Error?) in
+                    if let error = error
+                    {
+                        print("User log in failed: \(error.localizedDescription)")
+                        self.displayLoginError(error: error)
+                    }
+                    else
+                    {
+                        print("User \(curr_userName) logged in successfully")
+                        // display view controller that needs to shown after successful login
+                        NotificationCenter.default.post(name: NSNotification.Name("login"), object: nil)
+                    }
+                }
+            
+            }
+        
+        }
     }
 
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
 
-    @IBAction func onSignIn(_ sender: Any) {
+    @IBAction func onSignIn(_ sender: Any)
+    {
         // Login user
-
         // Check text field inputs
         if usernameAndPasswordNotEmpty() {
             let username = usernameField.text ?? ""
@@ -32,6 +57,10 @@ class LoginViewController: UIViewController {
                 } else {
                     print("User \(username) logged in successfully")
                     // display view controller that needs to shown after successful login
+                    let defaults = UserDefaults.standard
+                    defaults.setValue(user!.username, forKey: "userName")
+                    defaults.setValue(user!.password, forKey: "password")
+                    defaults.synchronize()
                     NotificationCenter.default.post(name: NSNotification.Name("login"), object: nil)
 
 
@@ -44,7 +73,8 @@ class LoginViewController: UIViewController {
     @IBAction func onSignUp(_ sender: Any) {
         // Sign up user
         // Check text field inputs
-        if usernameAndPasswordNotEmpty() {
+        if usernameAndPasswordNotEmpty()
+        {
             // initialize a user object
             let newUser = PFUser()
 
@@ -59,6 +89,10 @@ class LoginViewController: UIViewController {
                     self.displaySignupError(error: error)
                 } else {
                     print("User \(newUser.username!) Registered successfully")
+                    let defaults = UserDefaults.standard
+                    defaults.setValue(newUser.username, forKey: "userName")
+                    defaults.setValue(newUser.password, forKey: "password")
+                    defaults.synchronize()
                     NotificationCenter.default.post(name: NSNotification.Name("login"), object: nil)
 
                 }

@@ -198,6 +198,9 @@
                     <navigationItem key="navigationItem" title="Meal Feed" id="gcm-6J-RQf">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="LJJ-2x-SiZ">
                             <color key="tintColor" systemColor="systemGreenColor"/>
+                            <connections>
+                                <action selector="logout:" destination="Uit-D5-r2N" id="R8d-8Y-nT9"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Search" image="magnifyingglass" catalog="system" id="j0v-xW-nAZ">
                             <color key="tintColor" systemColor="systemGreenColor"/>
@@ -361,6 +364,9 @@
                                 <color key="tintColor" systemColor="systemGreenColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Ketogenic"/>
+                                <connections>
+                                    <action selector="onKeto:" destination="1Sq-WT-RZM" eventType="touchUpInside" id="Bsl-uA-b9P"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKw-jv-ka1">
                                 <rect key="frame" x="233" y="226" width="153" height="117"/>
@@ -368,7 +374,10 @@
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" systemColor="systemGreenColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Atkins"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Mediterranean"/>
+                                <connections>
+                                    <action selector="onMediterranean:" destination="1Sq-WT-RZM" eventType="touchUpInside" id="5ux-I9-ad3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2so-PP-NPV">
                                 <rect key="frame" x="20" y="392" width="164" height="122"/>
@@ -377,6 +386,9 @@
                                 <color key="tintColor" systemColor="systemGreenColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Vegan"/>
+                                <connections>
+                                    <action selector="onVegan:" destination="1Sq-WT-RZM" eventType="touchUpInside" id="I3d-Oe-0ld"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80b-BO-NK5">
                                 <rect key="frame" x="233" y="395" width="153" height="117"/>
@@ -385,6 +397,9 @@
                                 <color key="tintColor" systemColor="systemGreenColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Vegeterian"/>
+                                <connections>
+                                    <action selector="onVegeterian:" destination="1Sq-WT-RZM" eventType="touchUpInside" id="Oh6-9Q-nM8"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What are your Diet Goals??" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Lg-g8-wLS">
                                 <rect key="frame" x="104" y="117" width="206" height="21"/>
@@ -401,7 +416,7 @@
                                 <buttonConfiguration key="configuration" style="tinted" title="Submit"/>
                                 <connections>
                                     <action selector="onSubmit:" destination="1Sq-WT-RZM" eventType="touchUpInside" id="HeR-fb-Zih"/>
-                                    <segue destination="bSU-bS-UwQ" kind="presentation" modalPresentationStyle="fullScreen" id="5yz-yj-vUq"/>
+                                    <segue destination="bSU-bS-UwQ" kind="presentation" identifier="SignUpSegue" modalPresentationStyle="fullScreen" id="5yz-yj-vUq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -409,8 +424,8 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
-                        <outlet property="atkinsBtn" destination="RKw-jv-ka1" id="oas-6m-I2m"/>
                         <outlet property="ketogenicBtn" destination="7YV-Me-89c" id="3cH-dA-jQh"/>
+                        <outlet property="mediterraneanBtn" destination="RKw-jv-ka1" id="iLZ-7H-uzi"/>
                         <outlet property="veganBtn" destination="2so-PP-NPV" id="0eR-9F-GyB"/>
                         <outlet property="vegeterianBtn" destination="80b-BO-NK5" id="6E7-ne-Nd2"/>
                     </connections>
@@ -447,7 +462,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aQ1-F3-amm"/>
+        <segue reference="5yz-yj-vUq"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="company logo" width="500" height="500"/>
