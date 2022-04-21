@@ -7,6 +7,7 @@
 
 import UIKit
 import AlamofireImage
+import Parse
 
 class MainFeedTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
@@ -20,6 +21,7 @@ class MainFeedTableViewController: UIViewController, UITableViewDataSource, UITa
         self.tableView.delegate = self
         // Do any additional setup after loading the view.
         self.tableView.estimatedRowHeight = 300
+        self.loadSavedPerferences()
         self.populateMeals()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -27,11 +29,25 @@ class MainFeedTableViewController: UIViewController, UITableViewDataSource, UITa
     }
     func loadSavedPerferences()
     {
+        let curr_user = PFUser.current()!
+        let preferences = curr_user["preferences"] as? [String] ?? []
+        self.savedPreferences.append(contentsOf: preferences)
         
     }
     func populateMeals()
     {
-        let myParams = ["apiKey":"57021b3f90dd45afae68b1f9a0316c93", "number": 40] as [String : Any]
+        var stringPerf = ""
+        self.savedPreferences.forEach { (element:String) in
+            if(element != self.savedPreferences.last)
+            {
+                stringPerf += "\(element),"
+            }
+            else
+            {
+                stringPerf += element
+            }
+        }
+        let myParams = ["apiKey":"57021b3f90dd45afae68b1f9a0316c93", "number": 10,"tags": stringPerf] as [String : Any]
         let myEndPoint = "/recipes/random"
         SpoonacularAPICaller.getData(myParams, myEndPoint)
         {
@@ -97,7 +113,19 @@ class MainFeedTableViewController: UIViewController, UITableViewDataSource, UITa
         
     }
     
-
+    @IBAction func logout(_ sender: Any)
+    {
+        PFUser.logOut()
+        let defaults = UserDefaults.standard
+        defaults.removeObject(forKey: "userName")
+        defaults.removeObject(forKey: "password")
+        defaults.synchronize()
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
+        // accessing the scene delegate
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let delegate = windowScene.delegate as? SceneDelegate else {return}
+        delegate.window?.rootViewController = loginViewController
+    }
 }
 
 // we need to additional functionality to the string class inorder to unwrap optional
