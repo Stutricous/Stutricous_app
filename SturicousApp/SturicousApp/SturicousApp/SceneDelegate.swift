@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Parse
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -16,7 +17,35 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
+        NotificationCenter.default.addObserver(forName: Notification.Name("didLogout"), object: nil, queue: OperationQueue.main) { (Notification) in
+            print("Logout notification received")
+            // Load and show Login view controller
+            self.logOut()
+        }
+        
+        
         guard let _ = (scene as? UIWindowScene) else { return }
+        if PFUser.current() != nil {
+            //user logged in, so want to bypass login screen
+            let main = UIStoryboard(name: "Main", bundle:nil)
+            let tabViewController = main.instantiateViewController(withIdentifier: "TabViewController")
+            window?.rootViewController = tabViewController
+        }
+    }
+    
+    func logOut() {
+        PFUser.logOutInBackground(block: { (error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                print("Successful Logout")
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+                self.window?.rootViewController = loginViewController
+            }
+            
+        })
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

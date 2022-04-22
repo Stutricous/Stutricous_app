@@ -22,9 +22,13 @@
 		82094B8735D06CD7D9C95040 /* Pods_SturicousApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D273EF1C695880CD4BFAB6A /* Pods_SturicousApp.framework */; };
 		A9C53D8AA5FAF11E4C01176B /* Pods_SturicousApp_SturicousAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F162AD3E821C660E386FE633 /* Pods_SturicousApp_SturicousAppUITests.framework */; };
 		EB3760F027FF7DDA00AD7EA9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3760EF27FF7DDA00AD7EA9 /* LoginViewController.swift */; };
+		EBDE0D1B280E36F000FD2729 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDE0D1A280E36F000FD2729 /* ProfileViewController.swift */; };
 		EBED610C28023AEA00104740 /* SturicousAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBED610B28023AEA00104740 /* SturicousAppTests.swift */; };
 		EBED611928023BAD00104740 /* SturicousAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBED611828023BAD00104740 /* SturicousAppUITests.swift */; };
 		EBED611B28023BAD00104740 /* SturicousAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBED611A28023BAD00104740 /* SturicousAppUITestsLaunchTests.swift */; };
+		EBF25407280E6681009798F7 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF25406280E6681009798F7 /* ChatViewController.swift */; };
+		EBF25409280E6D12009798F7 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF25408280E6D12009798F7 /* ChatCell.swift */; };
+		EBF2540D280E8A08009798F7 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF2540C280E8A08009798F7 /* FavoritesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,11 +71,15 @@
 		DEBAA269FC437F032C0F14E6 /* Pods-SturicousApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SturicousApp.debug.xcconfig"; path = "Target Support Files/Pods-SturicousApp/Pods-SturicousApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E3AC7159B8D8AF8A0430DC98 /* Pods-SturicousApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SturicousApp.release.xcconfig"; path = "Target Support Files/Pods-SturicousApp/Pods-SturicousApp.release.xcconfig"; sourceTree = "<group>"; };
 		EB3760EF27FF7DDA00AD7EA9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		EBDE0D1A280E36F000FD2729 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		EBED610928023AEA00104740 /* SturicousAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SturicousAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBED610B28023AEA00104740 /* SturicousAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SturicousAppTests.swift; sourceTree = "<group>"; };
 		EBED611628023BAD00104740 /* SturicousAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SturicousAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBED611828023BAD00104740 /* SturicousAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SturicousAppUITests.swift; sourceTree = "<group>"; };
 		EBED611A28023BAD00104740 /* SturicousAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SturicousAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EBF25406280E6681009798F7 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		EBF25408280E6D12009798F7 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		EBF2540C280E8A08009798F7 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		F162AD3E821C660E386FE633 /* Pods_SturicousApp_SturicousAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SturicousApp_SturicousAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -131,6 +139,9 @@
 				0CE435F127FE738700734910 /* AppDelegate.swift */,
 				0CE435F327FE738700734910 /* SceneDelegate.swift */,
 				0CE435F727FE738700734910 /* Main.storyboard */,
+				EBF2540C280E8A08009798F7 /* FavoritesViewController.swift */,
+				EBF25406280E6681009798F7 /* ChatViewController.swift */,
+				EBDE0D1A280E36F000FD2729 /* ProfileViewController.swift */,
 				0C40FD53280896A60069D739 /* MealDetailViewController.swift */,
 				0CC598252805C87400E3B26E /* MealTableViewCell.swift */,
 				0CC598232805C43000E3B26E /* MainFeedViewController.swift */,
@@ -141,6 +152,7 @@
 				0CE435FC27FE738800734910 /* LaunchScreen.storyboard */,
 				0CE435FF27FE738800734910 /* Info.plist */,
 				0CBE09592809C1600089E95F /* IngredientTableViewCell.swift */,
+				EBF25408280E6D12009798F7 /* ChatCell.swift */,
 			);
 			path = SturicousApp;
 			sourceTree = "<group>";
@@ -442,14 +454,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBF2540D280E8A08009798F7 /* FavoritesViewController.swift in Sources */,
 				EB3760F027FF7DDA00AD7EA9 /* LoginViewController.swift in Sources */,
 				0CC598242805C43000E3B26E /* MainFeedViewController.swift in Sources */,
+				EBDE0D1B280E36F000FD2729 /* ProfileViewController.swift in Sources */,
 				0C40FD54280896A60069D739 /* MealDetailViewController.swift in Sources */,
 				0CC598262805C87400E3B26E /* MealTableViewCell.swift in Sources */,
 				0CE435F227FE738700734910 /* AppDelegate.swift in Sources */,
 				0C2FD7B92802135E00BCF67D /* SpoonacularAPICaller.swift in Sources */,
 				0CE435F427FE738700734910 /* SceneDelegate.swift in Sources */,
 				0CC59822280514E800E3B26E /* DietPreferencesViewController.swift in Sources */,
+				EBF25409280E6D12009798F7 /* ChatCell.swift in Sources */,
+				EBF25407280E6681009798F7 /* ChatViewController.swift in Sources */,
 				0CBE095A2809C1600089E95F /* IngredientTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -630,6 +646,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 359U585S8H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SturicousApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -658,6 +675,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 359U585S8H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SturicousApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
