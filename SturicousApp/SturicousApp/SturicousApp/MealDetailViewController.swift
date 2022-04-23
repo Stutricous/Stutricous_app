@@ -61,7 +61,7 @@ class MealDetailViewController: UIViewController, UITableViewDataSource, UITable
     private func gatherAPIData()
     {
         if let currMealId  = self.mealId{
-            let myParams = ["apiKey":"a3e448f17278429db089dbff7bf64451"] as [String : Any]
+            let myParams = ["apiKey":"a9872aeef9824f6b95cea9d2b4a00e47"] as [String : Any]
             let myEndPoint = "/recipes/\(currMealId)/ingredientWidget.json"
             SpoonacularAPICaller.getData(myParams, myEndPoint)
             {

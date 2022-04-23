@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 class SpoonacularAPICaller
 {
-    private static var apiKey:String = "a3e448f17278429db089dbff7bf64451"
+    private static var apiKey:String = "a9872aeef9824f6b95cea9d2b4a00e47"
     private static var baseUrl:String = "https://api.spoonacular.com"
     static func getData(_ params:[String:Any], _ endPoint: String, success:@escaping ([String:Any]) -> ())
     { // suppose you receive an array
@@ -37,23 +37,7 @@ class SpoonacularAPICaller
 }
 
     
-//    static func getAPIData(_ params:[String:Any], _ endPoint: String, _ completion @escaping ([String:Any]) -> ())
-//    {
-//        let url = URL(string: "\(self.baseUrl)/\(endPoint)?apiKey=\(self.apiKey)")!
-//        var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
-//        request.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
-//        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-//        let task = session.dataTask(with: request) { (data, response, error) in
-//             // This will run when the network request returns
-//             if let error = error {
-//                    print(error.localizedDescription)
-//             } else if let data = data {
-//                    let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-//
-//             }
-//        }
-//        task.resume()
-//    }
+
 
 
 

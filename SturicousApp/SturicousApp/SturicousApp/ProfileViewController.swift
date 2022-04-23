@@ -56,10 +56,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         self.insertPreferences.text = (String(mySubPref))
     }
 
-    
-   
-    
-     
+         
     @IBAction func OnSelectPhoto(_ sender: Any)
     {
         let myPickerController = UIImagePickerController()
@@ -80,24 +77,23 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         print(imageData!)
         
         let file = PFFileObject(name: "image.png", data: imageData!)
-        post["file"] = file
+        post["image"] = file
         
         post.saveInBackground { (success, error) in
             if success {
                 self.dismiss(animated: true, completion: nil)
                 print("saved!")
-                let profilePicGetter = file! as PFFileObject
-                profilePicGetter.getDataInBackground { (imageData: Data?, error: Error?) in
-                    if let error = error {
-                        print(error.localizedDescription)
-                    } else if let imageData = imageData {
-               let imageData = UIImage(data:imageData)
-                        self.reloadInputViews()
+                let query = PFQuery(className: "ProfilePic")
+                query.includeKeys(["author"])
+                
+                query.findObjectsInBackground { (posts, error) in
+                    if posts != nil {
+                        self.posts = posts!
             } else {
                 print("error!")
             }
         }
-}
+    }
         }
     }
     

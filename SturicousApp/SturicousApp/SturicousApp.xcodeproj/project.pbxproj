@@ -28,7 +28,6 @@
 		EBED611B28023BAD00104740 /* SturicousAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBED611A28023BAD00104740 /* SturicousAppUITestsLaunchTests.swift */; };
 		EBF25407280E6681009798F7 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF25406280E6681009798F7 /* ChatViewController.swift */; };
 		EBF25409280E6D12009798F7 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF25408280E6D12009798F7 /* ChatCell.swift */; };
-		EBF2540D280E8A08009798F7 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF2540C280E8A08009798F7 /* FavoritesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +78,6 @@
 		EBED611A28023BAD00104740 /* SturicousAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SturicousAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EBF25406280E6681009798F7 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		EBF25408280E6D12009798F7 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
-		EBF2540C280E8A08009798F7 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		F162AD3E821C660E386FE633 /* Pods_SturicousApp_SturicousAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SturicousApp_SturicousAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -139,7 +137,6 @@
 				0CE435F127FE738700734910 /* AppDelegate.swift */,
 				0CE435F327FE738700734910 /* SceneDelegate.swift */,
 				0CE435F727FE738700734910 /* Main.storyboard */,
-				EBF2540C280E8A08009798F7 /* FavoritesViewController.swift */,
 				EBF25406280E6681009798F7 /* ChatViewController.swift */,
 				EBDE0D1A280E36F000FD2729 /* ProfileViewController.swift */,
 				0CC598252805C87400E3B26E /* MealTableViewCell.swift */,
@@ -454,7 +451,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBF2540D280E8A08009798F7 /* FavoritesViewController.swift in Sources */,
 				EB3760F027FF7DDA00AD7EA9 /* LoginViewController.swift in Sources */,
 				0CC598242805C43000E3B26E /* MainFeedViewController.swift in Sources */,
 				EBDE0D1B280E36F000FD2729 /* ProfileViewController.swift in Sources */,
