@@ -116,6 +116,8 @@ Here's a walkthrough of implemented user stories:
 - [X] User can change their profile picture
 - [X] User can engage in a community chat
 - [X] User can access a profile page
+- 
+<img src='https://github.com/Stutricous/Stutricous_app/blob/yug_dev/SturicousApp/SturicousApp/StutriousBuildWeek3.gif' title='Week 3 Build Walkthrough' width='' alt='Week 3 Build Walkthrough' />
 
 ## Wireframes
 ![SecondScannedDocuments](https://user-images.githubusercontent.com/77123840/161363751-d32aefc9-6887-4ce9-ba9f-040f284281b3.jpeg)
