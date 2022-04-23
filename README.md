@@ -1,4 +1,4 @@
-.# Sturicous 
+## Stutricous 
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -24,20 +24,24 @@ Sturicous is an app that can recommend meals based on your general health goals.
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
-* User should be able to login or should be able to create a new account.
-* User must be able to have a diet emphasis(i.e 'weight loss', 'vegetarian')
-* User should be able to see a list of recommended meals given their diet emphasis.
-* User should be able to see a meal detail screen per meal item. 
-* User can plan meals for each day of the week.
-* User can search for meals
-* User can see a "Recommended Next Meal" that would be able to get information and items that would be a good idea for their next meal considering their diet plans or diet emphasis.
+[X] User should be able to login or should be able to create a new account.
+[X] User must be able to have a diet emphasis(i.e 'weight loss', 'vegetarian')
+[X] User should be able to see a list of recommended meals given their diet emphasis.
+[X] User should be able to see a meal detail screen per meal item. 
+[X] User should have a profile page.
+[X] User should be able to chat
+[X] User should be able to see a meal detail screen per meal item.
+
 
 
 **Optional Nice-to-have Stories**
-* Social Media aspect to the application where users can see what their friends are doing. It would be like a food twitter.
-* Share meal items between users/friends. 
-* Geo-features could be added to the application so that way meal grociery lists could be created and viewed at a grocery near you.
-* User should be able to change their diet emphasis. 
+[X] Social Media aspect to the application where users can see what their friends are doing. It would be like a food twitter.
+[] Share meal items between users/friends. 
+[]Geo-features could be added to the application so that way meal grociery lists could be created and viewed at a grocery near you.
+[X] User should be able to change their diet emphasis. 
+[] User can plan meals for each day of the week.
+[] User can search for meals
+[] User can see a "Recommended Next Meal" that would be able to get information and items that would be a good idea for their next meal considering their diet plans or diet emphasis.
 
 ### 2. Screen Archetypes
 * Login Screen:
@@ -93,7 +97,7 @@ Here's a walkthrough of implemented user stories:
 <img src='https://github.com/Stutricous/Stutricous_app/blob/main/SturicousApp/SturicousApp/StutriousBuildWeek1.gif' title='Week 1 Build Walkthrough' width='' alt='Week 1 Build Walkthrough' />
 
 
-## Week 2 Build Through
+## Week 2 Build Walkthrough
 
 - [X] User stays logged in 
 - [X] User sees feed 
@@ -102,6 +106,16 @@ Here's a walkthrough of implemented user stories:
 
 ![implementUserFeed](https://user-images.githubusercontent.com/77123840/163660151-a91dc5de-054b-4b52-8fb6-3adb3da8747f.gif)
 ![MealDetail](https://user-images.githubusercontent.com/77123840/163660186-18f28437-6658-4c70-ba23-53c1ee5466e6.gif)
+
+# Week 3 Build Walkthrough
+
+- [X] Profile shows the dietary preference picked
+- [X] Changed preferences shown in the Insert Your Preferences Label
+- [X] Allow users to select a profile pic from camera roll
+- [X] Saves to backend
+- [X] User can change their profile picture
+- [X] User can engage in a community chat
+- [X] User can access a profile page
 
 ## Wireframes
 ![SecondScannedDocuments](https://user-images.githubusercontent.com/77123840/161363751-d32aefc9-6887-4ce9-ba9f-040f284281b3.jpeg)
