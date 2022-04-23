@@ -90,6 +90,7 @@ class LoginViewController: UIViewController {
                     self.displaySignupError(error: error!)
                 } else {
                     print("User \(newUser.username!) Registered successfully")
+                    self.performSegue(withIdentifier: "signUpSegue", sender: nil)
                     let defaults = UserDefaults.standard
                     defaults.setValue(newUser.username, forKey: "userName")
                     defaults.setValue(newUser.password, forKey: "password")
@@ -139,6 +140,7 @@ class LoginViewController: UIViewController {
         alertController.addAction(OKAction)
         present(alertController, animated: true)
     }
+    
 
 
     // Sign up error alert controller

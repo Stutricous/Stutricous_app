@@ -18,6 +18,7 @@ class MealDetailViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var mealName: UILabel!
     @IBOutlet weak var mealDescription: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var IngredientLabel: UILabel!
     private var currMealData = [String:Any]()
     private var mealId:CLong?
     private var ingredientsList = [[String:Any]]()
@@ -30,6 +31,7 @@ class MealDetailViewController: UIViewController, UITableViewDataSource, UITable
         // Do any additional setup after loading the view
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.tableView.estimatedRowHeight = 800
         self.setUpUIElements()
         self.gatherAPIData()
         
@@ -59,7 +61,7 @@ class MealDetailViewController: UIViewController, UITableViewDataSource, UITable
     private func gatherAPIData()
     {
         if let currMealId  = self.mealId{
-            let myParams = ["apiKey":"57021b3f90dd45afae68b1f9a0316c93"] as [String : Any]
+            let myParams = ["apiKey":"a3e448f17278429db089dbff7bf64451"] as [String : Any]
             let myEndPoint = "/recipes/\(currMealId)/ingredientWidget.json"
             SpoonacularAPICaller.getData(myParams, myEndPoint)
             {
@@ -69,6 +71,15 @@ class MealDetailViewController: UIViewController, UITableViewDataSource, UITable
                 self.numberOfIngredients += self.ingredientsList.count
                 self.tableView.reloadData()
             }
+            SpoonacularAPICaller.getData(myParams, myEndPoint)
+            {
+                (data:[String: Any]) in
+                let ingredients = data["ingredients"] as! [[String:Any]]
+                self.ingredientsList.append(contentsOf: ingredients)
+                self.numberOfIngredients += self.ingredientsList.count
+                self.tableView.reloadData()
+            }
+            
         }
     }
     
@@ -109,7 +120,6 @@ class MealDetailViewController: UIViewController, UITableViewDataSource, UITable
         cell.metricLabel.text = unit
         return cell
     }
-    
     
 
     /*

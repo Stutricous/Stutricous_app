@@ -47,7 +47,7 @@ class MainFeedTableViewController: UIViewController, UITableViewDataSource, UITa
                 stringPerf += element
             }
         }
-        let myParams = ["apiKey":"57021b3f90dd45afae68b1f9a0316c93", "number": 10,"tags": stringPerf] as [String : Any]
+        let myParams = ["apiKey":"a3e448f17278429db089dbff7bf64451", "number": 10,"tags": stringPerf] as [String : Any]
         let myEndPoint = "/recipes/random"
         SpoonacularAPICaller.getData(myParams, myEndPoint)
         {

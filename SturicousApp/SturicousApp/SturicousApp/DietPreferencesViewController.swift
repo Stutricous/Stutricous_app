@@ -16,10 +16,8 @@ class DietPreferencesViewController: UIViewController {
 
     @IBOutlet weak var veganBtn: UIButton!
 
-    @IBOutlet weak var vegeterianBtn: UIButton!
-
     private var recipeDictionaries:[[String:Any]]!
-    private var myPreferences:Set<String> = []
+    public var myPreferences:Set<String> = []
 
     override func viewDidLoad()
     {
@@ -41,11 +39,9 @@ class DietPreferencesViewController: UIViewController {
         self.ketogenicBtn.setTitleColor(UIColor.gray, for: .normal)
         self.mediterraneanBtn.setTitleColor(UIColor.gray, for: .normal)
         self.veganBtn.setTitleColor(UIColor.gray, for: .normal)
-        self.vegeterianBtn.setTitleColor(UIColor.gray, for: .normal)
         self.ketogenicBtn.setTitleColor(UIColor.white, for: .selected)
         self.mediterraneanBtn.setTitleColor(UIColor.white, for: .selected)
         self.veganBtn.setTitleColor(UIColor.white, for: .selected)
-        self.vegeterianBtn.setTitleColor(UIColor.white, for: .selected)
     }
 
     @IBAction func onKeto(_ sender: UIButton)
@@ -87,27 +83,15 @@ class DietPreferencesViewController: UIViewController {
         sender.isSelected = !sender.isSelected
     }
 
-    @IBAction func onVegeterian(_ sender: UIButton)
-    {
-        if(sender.isSelected)
-        {
-            self.myPreferences.remove("vegan")
-        }
-        else
-        {
-            self.myPreferences.insert("vegan")
-        }
-        sender.isSelected = !sender.isSelected
-
-    }
     @IBAction func onSubmit(_ sender: Any)
     {
-        var current_user  = PFUser.current()!
+        let current_user  = PFUser.current()!
         current_user["preferences"] = Array(self.myPreferences)
         current_user.saveInBackground
         {
           (success: Bool, error: Error?) in
           if (success) {
+              print("User editted preferences!")
               self.performSegue(withIdentifier: "SignUpSegue", sender: nil)
           } else {
             // There was a problem, check error.description

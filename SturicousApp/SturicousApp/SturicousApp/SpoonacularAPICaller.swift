@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 class SpoonacularAPICaller
 {
-    private static var apiKey:String = "57021b3f90dd45afae68b1f9a0316c93"
+    private static var apiKey:String = "a3e448f17278429db089dbff7bf64451"
     private static var baseUrl:String = "https://api.spoonacular.com"
     static func getData(_ params:[String:Any], _ endPoint: String, success:@escaping ([String:Any]) -> ())
     { // suppose you receive an array
