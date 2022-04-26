@@ -49,13 +49,22 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let myPrefString = String(describing: myPref)
         let myPrefArr = myPrefString.components(separatedBy: " ")
         let myPrefValue = myPrefArr[1]
-        let start = myPrefValue.index(myPrefValue.startIndex, offsetBy: 16)
-        let end = myPrefValue.index(myPrefValue.endIndex, offsetBy: -3)
-        let range = start..<end
-        let mySubPref = myPrefValue[range]
-        self.insertPreferences.text = (String(mySubPref))
+        if myPrefValue.count > 21 {
+            print(myPrefValue.count)
+            let start = myPrefValue.index(myPrefValue.startIndex, offsetBy: 16)
+            let end = myPrefValue.index(myPrefValue.endIndex, offsetBy: -3)
+            let range = start..<end
+            let mySubPref = myPrefValue[range]
+            print((String(mySubPref).count))
+            if (String(mySubPref).count) > 2 {
+                self.insertPreferences.text = (String(mySubPref))
+            } else {
+                insertPreferences.text = "None"
+            }
+        } else {
+            insertPreferences.text = "None"
+        }
     }
-
          
     @IBAction func OnSelectPhoto(_ sender: Any)
     {
